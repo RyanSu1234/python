@@ -1,0 +1,9 @@
+name=input("please input name")
+password=input("please input password")
+color=input("please input color")
+
+
+if (password == '1234')&(name == '1234')&(color == '1234'):
+    print("ygyvjgfhdfgfhgdrtvcsrthxsrtjdertydrtyvsdfghjrvtyusdftgyhujdftgyqwertyuiopasdfghjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
+else:
+    print("g52gr2rrgggrgggrgrrgggrrggrrrggggggrrrggrrgrgrrgrgrrdsshgddsdsddsgrggrggrgrgrgrrgrgrgggrgrgrgrgrgrgrgrgrgrgrgrggrgrrrgrgrgrgrgrggrggrggrrrrrgrrggrrgrrrrrrgrrrrrgrggggrrrrrrrggggggrrrrgrrrgrrrgrrgrggrggrrgggrgrrggrrrgrrgrrrggrg2gg2sdsrdfcdfghjhjnkadfghjkloiuytrewqlkjhgfddhdghsgshgsshwdhccggg44444444444dsamnbvcxzjhgfd.,mnbvchgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")
