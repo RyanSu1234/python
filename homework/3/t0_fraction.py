@@ -12,3 +12,8 @@ Input1:6
 Input2:9
 Output:False
 """
+def determine_numerator:(Denominator)
+    if temperature == 350/450:
+        print ('True')
+    else:
+        print ('False')
