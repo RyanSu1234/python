@@ -1,7 +1,10 @@
-"""
-Topic:請使用turtle及loop及time.sleep(1)印出秒針動畫
+import turtle as t
+import time as ti
 
-e.g.
-import time
-time.sleep(1)
-"""
+
+for x in range(60):
+    ti.sleep(0.1)
+    t.home()
+    t.clear()
+    t.forward(100)
+

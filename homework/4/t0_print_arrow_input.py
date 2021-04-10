@@ -4,10 +4,12 @@ Topic:請使用input輸入要印制的箭頭大小，最小為2行
 
 e.g.
 Please in row: 3
-   *   
-  ***  
- ***** 
-   *   
-   *   
-   *    
+   *
+  ***
+ *****
+   *
+   *
+   *
 """
+
+row = int(input("please in row: "))

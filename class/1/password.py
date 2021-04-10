@@ -4,6 +4,6 @@ color=input("please input color")
 
 
 if (password == '1234')&(name == '1234')&(color == '1234'):
-    print("ygyvjgfhdfgfhgdrtvcsrthxsrtjdertydrtyvsdfghjrvtyusdftgyhujdftgyqwertyuiopasdfghjkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
+    print("/*&09)(/.,<>)/?fr,,wennri.grugh75%^*&?>?<*&()")
 else:
-    print("g52gr2rrgggrgggrgrrgggrrggrrrggggggrrrggrrgrgrrgrgrrdsshgddsdsddsgrggrggrgrgrgrrgrgrgggrgrgrgrgrgrgrgrgrgrgrgrggrgrrrgrgrgrgrgrggrggrggrrrrrgrrggrrgrrrrrrgrrrrrgrggggrrrrrrrggggggrrrrgrrrgrrrgrrgrggrggrrgggrgrrggrrrgrrgrrrggrg2gg2sdsrdfcdfghjhjnkadfghjkloiuytrewqlkjhgfddhdghsgshgsshwdhccggg44444444444dsamnbvcxzjhgfd.,mnbvchgfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff")
+    print("icfdwbui<*hu>..,oehrwh//.*&njie")
