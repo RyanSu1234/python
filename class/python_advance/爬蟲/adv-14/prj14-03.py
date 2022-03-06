@@ -1,12 +1,12 @@
-from moviepy.editor import *      
-from pytube import YouTube      
-from tkinter import *      
-from moviepy.editor import VideoFileClip      
+from moviepy.editor import *
+from pytube import YouTube
+from tkinter import *
+from moviepy.editor import VideoFileClip
 import os     
 
-   
 
-print("we are downloading video...")    
+
+print("we are downloading video...")
 
 def mp4_change():
     chk_mp3_cut=state.get()
@@ -30,7 +30,7 @@ def mp4_change():
         new_file = "龍貓"
 
     new_path = base_path + new_file + ".mp3"      
-        
+
     i=0;      
     while os.path.isfile(new_path):      
         i+=1      

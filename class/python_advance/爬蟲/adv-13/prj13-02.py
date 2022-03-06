@@ -10,20 +10,20 @@ video = yt.streams
 result = video.filter(progressive=True, subtype="mp4", res="360p")
 print(result[0])
 
-dest = "adv-13/"
+dest = "adv-13/prj13-movie/"
 fname = "小小兵.mp4"
 
 result[0].download(output_path=dest,filename=fname)
 print("download finish...")
 
-video_path = "adv-13/小小兵.mp4"
+video_path = "adv-13/prj13-movie/小小兵.mp4"
 if os.path.isfile(video_path):
     clip = VideoFileClip(video_path)
     clip = clip.subclip(8, 20)
 else:
     exit()
 
-base_path = "adv-13/"
+base_path = "adv-13/prj13-movie/"
 new_file = "小小兵-Cut"
 new_path = base_path + new_file + ".gif"
 
