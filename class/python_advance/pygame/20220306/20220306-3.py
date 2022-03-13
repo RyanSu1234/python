@@ -1,5 +1,4 @@
 import math
-from selectors import EVENT_WRITE
 import pygame
 import sys
 
