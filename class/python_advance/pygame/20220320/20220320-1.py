@@ -1,4 +1,5 @@
 import random
+from turtle import ycor
 import pygame
 import sys
 
@@ -22,6 +23,11 @@ background_y = background.get_height()
 screen = pygame.display.set_mode((background_x, background_y))
 pygame.display.set_caption("My Game")
 
+mp3_path = 'pygame/20220320/music1.mp3'
+pygame.mixer.music.load(mp3_path)
+pygame.mixer.music.play()
+pygame.mixer.music.fadeout(600000)
+
 typeface = pygame.font.get_default_font()
 font = pygame.font.Font(typeface, 24)
 title = font.render('Start', True, (128, 255, 255))
@@ -30,10 +36,14 @@ tit_h = title.get_height()
 
 act = False
 
-x_site = random.randrange(0, background_x)  #圓心位置
-y_site = random.randrange(-70, -59)  #圓心位置
-x_shift = random.randrange(-5, 5)  #x軸偏移量
-radius = random.randrange(4, 6)  #半徑和y下降量
+snow_list = []
+
+for i in range(300):
+    x_site = random.randrange(0, background_x)  #圓心位置
+    y_site = random.randrange(-1000, -1)  #圓心位置
+    x_shift = random.randrange(-5, 8)  #x軸偏移量
+    radius = random.randrange(4, 6)  #半徑和y下降量
+    snow_list.append([x_site, y_site, x_shift, radius])
 
 clock = pygame.time.Clock()
 cnt = 0
@@ -58,14 +68,17 @@ while True:
     else:
         title = font.render('Start', True, (0, 0, 0))
 
-        pygame.draw.circle(screen, (255, 255, 255), (x_site, y_site), radius)
+        #pygame.draw.circle(screen, (255, 255, 255), (x_site, y_site), radius)
+        for snow in snow_list:
+            pygame.draw.circle(screen, (255, 255, 255), (snow[0], snow[1]),
+                               snow[3])
 
-        x_site += x_shift
-        y_site += radius
+            snow[0] += snow[2]
+            snow[1] += snow[3]
 
-        if y_site > background_y or x_site > background_x:
-            y_site = random.randrange(-10, -1)
-            x_site = random.randrange(0, background_x)
+            if snow[1] > background_y or snow[0] > background_x:
+                snow[1] = random.randrange(-1000, -1)
+                snow[0] = random.randrange(0, background_x)
 
     screen.blit(title, (0, 0))
 

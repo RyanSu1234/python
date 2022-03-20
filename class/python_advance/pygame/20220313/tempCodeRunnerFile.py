@@ -1,1 +1,1 @@
-background
+pygame.draw.circle(background, (0, 0, 225), (400, 100), 30, 0)
