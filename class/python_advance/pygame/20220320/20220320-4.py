@@ -30,10 +30,10 @@ pygame.mixer.music.fadeout(600000)
 
 typeface = pygame.font.get_default_font()
 font = pygame.font.Font(typeface, 24)
-title = font.render('Start', True, (128, 255, 255))
+title = font.render('Start', True, (0, 35, 245))
 tit_w = title.get_width()
 tit_h = title.get_height()
-title1 = font.render('Fast', True, (128, 255, 255))
+title1 = font.render('Fast', True, (0, 35, 245))
 tit_w1 = title.get_width()
 tit_h1 = title.get_height()
 
@@ -60,7 +60,7 @@ while True:
 
     if speed == True:
         title1 = font.render('Fast', True, (0, 0, 1))
-        clock.tick(800)
+        clock.tick(80)
     else:
         title1 = font.render('Slow', True, (0, 0, 0))
         clock.tick(20)
@@ -79,14 +79,12 @@ while True:
 
     if act == True:
         title = font.render('Stop', True, (0, 0, 0))
-        pygame.mixer.music.pause()
     else:
         title = font.render('Start', True, (0, 0, 0))
-        pygame.mixer.music.unpause()
 
         #pygame.draw.circle(screen, (255, 255, 255), (x_site, y_site), radius)
         for snow in snow_list:
-            pygame.draw.circle(screen, (255, 255, 255), (snow[0], snow[1]),
+            pygame.draw.circle(screen, (0, 35, 245), (snow[0], snow[1]),
                                snow[3])
 
             snow[0] += snow[2]
