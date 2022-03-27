@@ -1,6 +1,9 @@
 import pygame
 import sys
 import random
+import os
+
+os.chdir(sys.path[0])
 
 
 def check_click(pos, x_min, y_min, x_max, y_max):
@@ -13,17 +16,21 @@ def check_click(pos, x_min, y_min, x_max, y_max):
 
 
 pygame.init()
-bg_x = 500
-bg_y = 400
+bg_img = "Gophers_BG_800x600.png"
+bg = pygame.image.load(bg_img)
+bg_x = bg.get_width()
+bg_y = bg.get_height()
 BLUE = (0, 0, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 screen = pygame.display.set_mode([bg_x, bg_y])
+sur = pygame.Surface([bg_x, bg_y])
 pygame.display.set_caption("打地鼠")
 
-sur = pygame.Surface([bg_x, bg_y])
+gophers = pygame.image.load("Gophers150.png")
 
-pos6 = [[200, 200], [300, 200], [400, 200], [200, 300], [300, 300], [400, 300]]
+pos6 = [[195, 305], [400, 305], [610, 305], [2195, 450], [400, 450],
+        [610, 450]]
 
 tick = 0
 max_tick = 20
@@ -53,8 +60,10 @@ while True:
     else:
         tick += 1
 
-    sur.fill(BLACK)
-    pygame.draw.circle(sur, BLUE, pos, 50)
+    sur.blit(bg, (0, 0))
+    sur.blit(
+        gophers,
+        (pos[0] - gophers.get_width() / 2, pos[1] - gophers.get_height() / 2))
     screen.blit(sur, (0, 0))
 
     score_sur = score_font.render(str(score), False, RED)
