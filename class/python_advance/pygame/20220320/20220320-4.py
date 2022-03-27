@@ -45,7 +45,7 @@ snow_list = []
 for i in range(300):
     x_site = random.randrange(0, background_x)  #圓心位置
     y_site = random.randrange(-1000, -1)  #圓心位置
-    x_shift = random.randrange(-5, 8)  #x軸偏移量
+    x_shift = random.randrange(-5, 0)  #x軸偏移量
     radius = random.randrange(4, 6)  #半徑和y下降量
     snow_list.append([x_site, y_site, x_shift, radius])
 
@@ -56,7 +56,7 @@ while True:
         cnt += 1
     else:
         cnt = 0
-    x_shift = random.randrange(-5, 5)  #x軸偏移量
+    x_shift = random.randrange(-5, 0)  #x軸偏移量
 
     if speed == True:
         title1 = font.render('Fast', True, (0, 0, 1))
@@ -91,7 +91,7 @@ while True:
             snow[1] += snow[3]
 
             if snow[1] > background_y or snow[0] > background_x:
-                snow[1] = random.randrange(-1000, -1)
+                snow[1] = random.randrange(-10, -1)
                 snow[0] = random.randrange(0, background_x)
 
     screen.blit(title, (0, 0))
