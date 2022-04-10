@@ -106,4 +106,4 @@ while True:
         screen.blit(score_sur, (10, 10))
         pygame.display.flip()
         if (hammer == ham1 or hitsur == gophers1):
-            time.sleep(0.05)
+            time.sleep(0.1)
