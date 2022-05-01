@@ -64,7 +64,7 @@ def move_dinosaur(win, timer):
 
     if jumpState:
         if ds_y >= LIMIT_LOW:
-            jumpValue = -5
+            jumpValue = -10
         if ds_y <= 0:
             jumpValue = 10
         ds_y += jumpValue
