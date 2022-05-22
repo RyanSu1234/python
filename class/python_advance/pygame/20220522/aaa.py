@@ -112,7 +112,7 @@ def move_missile(win, key, timer):
     global msl_f, msl_y, msl_x, msl_no
     '''設定飛彈初始位置'''
     if key[K_SPACE]:
-        if timer % 5 == 0:
+        if timer % 3 == 0:
             if msl_f[msl_no] == False:
                 msl_f[msl_no] = True
                 msl_x[msl_no] = ss_x - msl_wh
