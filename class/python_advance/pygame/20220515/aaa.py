@@ -26,7 +26,7 @@ img_sship = [
 
 img_burn = pygame.image.load("starship_burner.png")
 
-img_weapon = pygame.image.load("bullet.png")
+img_weapon = pygame.image.load("fighter_M.png")
 
 img_enemy = pygame.image.load("enemy1.png")
 
