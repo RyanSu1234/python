@@ -1,2 +1,1 @@
-
-        if msl_f[i] == True:
+img_enemy
