@@ -35,10 +35,13 @@ img_weapon = pygame.image.load("bullet.png")
 img_enemy = [
     pygame.image.load("enemy1.png"),
     pygame.image.load("enemy2.png"),
-    pygame.image.load("123.png"),
-    pygame.image.load("234.png"),
-    pygame.image.load("345.png"),
-    pygame.image.load("pT5A7L8T9.png")
+    #pygame.image.load("123.png"),
+    #pygame.image.load("234.png"),
+    #pygame.image.load("345.png"),
+    pygame.image.load("1.png"),
+    pygame.image.load("2.png"),
+    pygame.image.load("3.png"),
+    pygame.image.load("4.png")
 ]
 
 #***載入圖片結束***
