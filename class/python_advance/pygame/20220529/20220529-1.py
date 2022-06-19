@@ -1,10 +1,14 @@
 #===載入套件開始===
 import random
+
 import pygame
+
 import sys
+
 import os
 
 os.chdir(sys.path[0])
+
 from pygame.locals import *
 #***載入套件結束***
 
@@ -25,19 +29,20 @@ img_sship = [
     pygame.image.load("fighter_R.png")
 ]
 
-pygame.mixer.music.load("hit (1).mp3")
+#pygame.mixer.music.load("hit (1).mp3")
 
 img_burn = pygame.image.load("starship_burner.png")
 
 img_emy_burn = pygame.transform.rotate(img_burn, 180)
 
 img_weapon = pygame.image.load("bullet.png")
+
 img_enemy = [
     pygame.image.load("enemy1.png"),
     pygame.image.load("enemy2.png"),
-    #pygame.image.load("123.png"),
-    #pygame.image.load("234.png"),
-    #pygame.image.load("345.png"),
+    pygame.image.load("123.png"),
+    pygame.image.load("234.png"),
+    pygame.image.load("345.png"),
     pygame.image.load("1.png"),
     pygame.image.load("2.png"),
     pygame.image.load("3.png"),
@@ -147,7 +152,7 @@ def move_missile(win, key, timer):
 #===敵機設定開始===
 emy_burn_w, emy_burn_h = img_emy_burn.get_rect().size
 
-ENEMY_MAX = 6
+ENEMY_MAX = 9
 emy1_f = False
 emy1_x = 0
 emy1_y = bg_y + 10
@@ -180,7 +185,7 @@ def move_enemy(win, emy):  # 移動敵機
         for n in range(MISSILE_MAX):
             if msl_f[n] == True and is_hit(emy["X"], emy["Y"], msl_x[n],
                                            msl_y[n], emy_dist):
-                pygame.mixer.music.play()
+                #pygame.mixer.music.play()
                 msl_f[n] = False
                 emy["STATE"] = False
                 emy["Y"] = bg_y + 10
