@@ -180,4 +180,4 @@ while True:
     get_block_num(screen)
 
     pygame.display.update()
-    clock.tick(60)
+    clock.tick(100)
