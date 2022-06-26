@@ -25,6 +25,7 @@ BlOCK = (0, 0, 0)
 WHITE = (225, 225, 225)
 RED = (225, 0, 0)
 BLUE = (0, 255, 255)
+BLUE2 = (113, 231, 255)
 '''初始'''
 pygame.init()
 '''時脈'''
@@ -128,7 +129,7 @@ def get_block_num(win):
 def get_live_num(win):
     global live
 
-    sur1 = number_font.render(str(live), True, RED)
+    sur1 = number_font.render(str(live), True, BLUE2)
     win.blit(sur1, [10, 60])
 
 
@@ -200,6 +201,10 @@ def ball_update(win):
             else:
                 dx = 10
 
+        if 45 < brick_num < 50:
+
+            live += 0.5
+
         if brick_num < 30:
 
             if dy < 0:
@@ -215,7 +220,7 @@ def ball_update(win):
         if (ball_y > bg_y - ball_diameter):
             live -= 1
             act = False
-            if (live <= 0):
+            if (live <= 0.9):
                 game_mode = 0
 
         if (ball_x > bg_x - ball_diameter or ball_x < ball_diameter):
