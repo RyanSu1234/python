@@ -8,17 +8,6 @@ from pygame.locals import *
 import random
 #***載入套件結束***
 
-img_gg = pygame.image.load('gameover.png')
-gg_w = img_gg.get_width()
-gg_h = img_gg.get_height()
-
-
-def game_over(win):
-    global live
-
-    win.blit(img_gg, ((bg_x - gg_w) / 2, (bg_y - gg_h) / 2))
-
-
 #===初始化設定開始===
 '''顏色'''
 BlOCK = (0, 0, 0)
@@ -29,26 +18,6 @@ BLUE = (0, 255, 255)
 pygame.init()
 '''時脈'''
 clock = pygame.time.Clock()
-
-game_mode = 1
-
-
-def resetGame():
-    global brick_num, bricks_list, dx, dy, act
-
-    for bricks in bricks_list:
-        r = random.randint(100, 200)
-        g = random.randint(100, 200)
-        b = random.randint(100, 200)
-        bricks[5] = (r, g, b)
-        bricks[4] = True
-
-    brick_num = TOTAL_BLOCK
-    dx = 8
-    dy = -8
-    act = False
-
-
 '''
 遊戲狀態
 #False:等待開球
@@ -56,7 +25,7 @@ def resetGame():
 '''
 
 act = False
-live = 3
+
 #***初始化設定結束***
 
 #===遊戲視窗設定開始===
@@ -91,20 +60,7 @@ for i in range(0, TOTAL_BLOCK):
 
 def brick_update(win):
     global brick_num, dy
-    for bricks in bricks_list:
 
-        if (is_hit(ball_x, ball_y,
-                   [bricks[0], bricks[1], bricks[2], bricks[3]])):
-            if (bricks[4]):
-                brick_num -= 1
-
-                if (brick_num <= 0):
-                    resetGame()
-                    break
-
-                dy = -dy
-
-            bricks[4] = False
     for bricks in bricks_list:
         if (bricks[4] == True):
             block_rect = [bricks[0], bricks[1], bricks[2], bricks[3]]
@@ -123,13 +79,6 @@ def get_block_num(win):
 
     sur = number_font.render(str(brick_num), True, RED)
     win.blit(sur, [10, 10])
-
-
-def get_live_num(win):
-    global live
-
-    sur1 = number_font.render(str(live), True, RED)
-    win.blit(sur1, [10, 60])
 
 
 #===顯示磚塊數量設定結束===
@@ -177,8 +126,8 @@ dy = -8
 
 
 def ball_update(win):
-    global ball_x, ball_y, brick_num
-    global dx, dy, act, game_mode, live
+    global ball_x, ball_y
+    global dx, dy, act
 
     if (act == False):
         ball_x = paddle_x + 50
@@ -188,35 +137,8 @@ def ball_update(win):
         ball_x += dx
         ball_y += dy
 
-        if brick_num < 70:
-
-            if dy < 0:
-                dy = -10
-            else:
-                dy = 10
-
-            if dx < 0:
-                dx = -10
-            else:
-                dx = 10
-
-        if brick_num < 30:
-
-            if dy < 0:
-                dy = -13
-            else:
-                dy = 13
-
-            if dx < 0:
-                dx = -13
-            else:
-                dx = 13
-
         if (ball_y > bg_y - ball_diameter):
-            live -= 1
             act = False
-            if (live <= 0):
-                game_mode = 0
 
         if (ball_x > bg_x - ball_diameter or ball_x < ball_diameter):
             dx = -dx
@@ -230,9 +152,8 @@ def ball_update(win):
 #===球設定結束===
 
 #===初始遊戲設定開始===
-
 #===初始遊戲設定結束===
-resetGame()
+
 #-------------------------------------------------------------------------
 # 主迴圈.
 #-------------------------------------------------------------------------
@@ -248,29 +169,15 @@ while True:
             if (act == False):
                 act = True
 
-        if event.type == KEYDOWN:
-            if event.key == K_ESCAPE:
-                resetGame()
-                game_mode = 1
-                live = 3
+    screen.fill(BlOCK)
 
-    if (game_mode):
+    ball_update(screen)
 
-        screen.fill(BlOCK)
+    paddle_update(screen)
 
-        ball_update(screen)
+    brick_update(screen)
 
-        paddle_update(screen)
-
-        brick_update(screen)
-
-        get_block_num(screen)
-
-        get_live_num(screen)
-
-    else:
-
-        game_over(screen)
+    get_block_num(screen)
 
     pygame.display.update()
-    clock.tick(60)
+    clock.tick(100)
