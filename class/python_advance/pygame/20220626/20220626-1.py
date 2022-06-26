@@ -201,9 +201,16 @@ def ball_update(win):
             else:
                 dx = 10
 
-        if 45 < brick_num < 50:
-
-            live += 0.5
+        if 47 < brick_num < 50:
+            if dx < 0:
+                dx = -8
+            else:
+                dx = 8
+            if dy < 0:
+                dy = -8
+            else:
+                dy = 8
+            live += 1
 
         if brick_num < 30:
 
