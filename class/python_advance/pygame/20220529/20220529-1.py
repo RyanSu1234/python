@@ -43,8 +43,8 @@ img_enemy = [
     pygame.image.load("123.png"),
     pygame.image.load("234.png"),
     pygame.image.load("345.png"),
-    pygame.image.load("1.png"),
-    pygame.image.load("2.png"),
+    pygame.image.load("66.png"),
+    pygame.image.load("99.png"),
     pygame.image.load("3.png"),
     pygame.image.load("4.png")
 ]
